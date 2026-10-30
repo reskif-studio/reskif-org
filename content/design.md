@@ -7,10 +7,14 @@
 - Contraintes : communs Reskif (logo 28 px, Rubik, effet riso), couleurs demandées par Julien : jaune, cyan, magenta.
 
 ## Couleurs (les encres d'une risographe)
-- Jaune #ffcc00, cyan #00aaff, magenta #ff00e5 : uniquement comme **encres d'impression** des photos riso (deux passages superposés en multiply sur papier blanc), et magenta pour les « vi » du titre.
-- Encre #042e4d : tout le texte, filets, boutons.
-- Blanc #ffffff : papier, sections calmes, voile de lecture.
-Règle (Julien, 30/10/2026) : **jamais d'aplat de couleur en fond**. Un fond = blanc, ou une photo tramée en riso léger (points de 3,5 px, contraste bas) sous un voile blanc pour le texte.
+| Nom | Hex | Rôle |
+|---|---|---|
+| Jaune | #ffcc00 | papier du hero d'accueil, parcours du Studio |
+| Cyan | #00aaff | section Studio, Jean-Claude, encre d'impression |
+| Magenta | #ff00e5 | encre d'impression, le deal, financeurs |
+| Encre | #042e4d | tout le texte, filets, boutons |
+| Blanc | #ffffff | sections calmes |
+Règles : texte toujours en encre (jamais de texte courant blanc sur magenta : contraste insuffisant). Une section = une encre.
 
 ## Typo
 Rubik seule (communs). Titres 900, interlignage serré 0,95-1,02, approche -0,03em ; texte 400 à 1,0625-1,25 rem, lignes < 70 caractères ; intertitres 700. Pas de capitales pour les étiquettes, pas de mot accentué en couleur dans un titre.
@@ -18,21 +22,22 @@ Rubik seule (communs). Titres 900, interlignage serré 0,95-1,02, approche -0,03
 ## Layout
 ```
 [logo] Le Studio  Contribuer  Projets                 (Proposer un projet)
-FOUGÈRE riso jaune+cyan, toute la fenêtre
-            le Vi rtuel
-        au ser vi ce          les trois « vi » sur une même verticale
-            du vi vant
-RISO forêt (magenta+cyan)   Un réseau de kif + texte, voile blanc à gauche
-RISO table (jaune+magenta)  L'Impact Studio, voile blanc plein
-RISO parc (cyan+magenta)    Contribuer, voile blanc plein
-BLANC                       Projets
+JAUNE ───────────────────────────────────────────────────────────────
+  Mettre le virtuel               ┌──────────────────┐
+  au service du vivant.           │ photo riso        │  2 passages
+  intro (2-3 lignes)              │ magenta + cyan    │  décalés
+  (Découvrir le Studio) (…)       └──────────────────┘
+BLANC   phrase-manifeste grande | texte
+CYAN    L'Impact Studio : 2 colonnes séparées par un filet, le modèle en une phrase
+BLANC   Contribuer : 3 lignes, chacune marquée par une barre d'encre (M / C / J)
+BLANC   Projets : lignes nom | résumé | lien du site
 ```
-Alignement à gauche partout, sauf le titre d'ouverture (centré, aligné sur la colonne des « vi »). Retour à la ligne après les phrases importantes.
+Alignement à gauche partout. Filets encre 1 px pour structurer, pas de cartes identiques.
 
 ## Principes
-- Le moment fort unique : l'ouverture plein écran, la fougère imprimée en jaune + cyan (le vert naît de la superposition des encres) et le titre dont les « vi » de virtuel, service et vivant s'empilent en magenta.
+- Le moment fort unique : la photo du hero imprimée en deux passages (magenta puis cyan en multiply, trames à 45° et 15°) avec un léger défaut de calage qui se résorbe au chargement. Le reste est calme.
 - La structure dit quelque chose : barres d'encre = profils ; numéros seulement pour les étapes du mois (vraie séquence).
-- Mouvement : aucun.
+- Mouvement : seulement le calage du hero, désactivé si `prefers-reduced-motion`.
 
 ## Revue contre les défauts génériques
 - Supprimé : étiquettes en capitales au-dessus des titres, séparateurs « · », flèches dans les boutons, grilles de cartes arrondies identiques, gros chiffres + petit libellé pour le modèle (remplacés par une phrase).
