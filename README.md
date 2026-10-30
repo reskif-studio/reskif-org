@@ -4,7 +4,8 @@ Site vitrine de l'association Reskif : page d'accueil et page **Impact Studio**.
 
 - HTML/CSS statique, sans build : tout est dans `public/`.
 - Hébergé sur **Cloudflare Pages** (projet `reskif-org`), déployé automatiquement à chaque push sur `main`.
-- Identité (logo, couleurs, Rubik, effet riso) copiée depuis [reskif-commons](https://github.com/reskif-studio/reskif-commons) @4dc85c1.
+- Identité : communs [reskif-commons](https://github.com/reskif-studio/reskif-commons) @4dc85c1 (logo, Rubik, riso) ; encres jaune, cyan, magenta.
+- Design : skill frontend-design d'Anthropic, plan dans `content/design.md` (à relire avant toute refonte).
 - Contenu d'origine : la page Notion « Reskif — le réseau de kif » (voir `content/notion.md`).
 
 ## Pages
