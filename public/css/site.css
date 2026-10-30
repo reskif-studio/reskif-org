@@ -50,33 +50,46 @@ h1, h2, h3, p { margin: 0; }
 .bouton.grand { padding: 1rem 1.7rem; font-size: 1rem; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.25rem; }
 
-/* Sections : une encre par section */
+/* Sections : blanc, ou photo imprimée en riso (jamais d'aplat de couleur) */
 .bloc { padding: clamp(4.5rem, 10vw, 8rem) 0; border-bottom: 1px solid var(--encre); }
-.jaune { background: var(--jaune); }
-.cyan { background: var(--cyan); }
-.magenta { background: var(--magenta); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Fond riso : deux passages d'encre (trame fine, peu contrastée) en multiply, puis un voile blanc pour le texte */
+.fond { position: relative; isolation: isolate; overflow: hidden; }
+.fond > .encrage { position: absolute; inset: -6px; z-index: -2; }
+.fond > .encrage > div { position: absolute; inset: 0; }
+.fond > .encrage > div + div { mix-blend-mode: multiply; transform: translate(3px, 2px); }
+.fond::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.8) 38%, rgba(255,255,255,.25) 72%, rgba(255,255,255,0) 100%); }
+@media (max-width: 759px) { .fond::before { background: rgba(255,255,255,.82); } }
+.fond.dense::before { background: linear-gradient(rgba(255,255,255,.84), rgba(255,255,255,.76)); }
+.fond .t-titre + .t-chapo { margin-top: 1.5rem; }
+.fond .t-texte { color: var(--encre); }
+.fond .t-texte > p + p { margin-top: 1.1rem; }
+
+/* Ouverture : toute la fenêtre, la fougère et trois lignes dont les « vi » s'alignent */
+.ouverture { min-height: calc(100vh - 3.3rem); min-height: calc(100svh - 3.3rem); display: grid; place-items: center; padding: 3rem var(--gouttiere); border-bottom: 1px solid var(--encre); }
+.ouverture::before { background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(255,255,255,.78), rgba(255,255,255,.35) 70%, rgba(255,255,255,0)); }
+@media (max-width: 759px) { .ouverture::before { background: radial-gradient(ellipse 90% 45% at 50% 50%, rgba(255,255,255,.82), rgba(255,255,255,.3)); } }
+.vi-titre { font-size: clamp(2.9rem, 11.5vw, 10.5rem); font-weight: 900; line-height: .95; letter-spacing: -.04em; }
+.vi-grille { display: grid; grid-template-columns: max-content max-content; }
+.vi-grille > span { white-space: pre; }
+.vi-grille > span:nth-child(odd) { text-align: right; }
+.vi-grille b { font-weight: 900; color: var(--magenta); }
 .duo { display: grid; gap: 2.5rem; }
 @media (min-width: 960px) { .duo { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 4.5rem; align-items: start; } }
 
-/* Hero : impression en deux passages */
-.hero { padding: clamp(3rem, 7vw, 6rem) 0 clamp(3.5rem, 7vw, 6rem); border-bottom: 1px solid var(--encre); }
-.hero .cadre { display: grid; gap: 3rem; align-items: center; }
-@media (min-width: 960px) { .hero .cadre { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 3.5rem; } }
+/* Hero des pages intérieures : photo riso en fond */
+.hero { padding: clamp(5rem, 12vw, 9rem) 0; border-bottom: 1px solid var(--encre); }
 .hero .t-chapo { margin-top: 1.75rem; }
-.tirage { position: relative; aspect-ratio: 4 / 5; border: 1px solid var(--encre); overflow: hidden; isolation: isolate; }
-@media (max-width: 959px) { .tirage { aspect-ratio: 4 / 3; } }
-.tirage .passage { position: absolute; inset: -12px; }
-.tirage .passage + .passage { mix-blend-mode: multiply; transform: translate(5px, 3px); animation: calage 1.4s cubic-bezier(.2,.7,.2,1) .3s both; }
-@keyframes calage { from { transform: translate(22px, -16px); opacity: .0; } 35% { opacity: 1; } to { transform: translate(5px, 3px); opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .tirage .passage + .passage { animation: none; } html { scroll-behavior: auto; } }
-.legende { margin-top: .6rem; font-size: .85rem; color: var(--encre-douce); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* Deux colonnes séparées par un filet */
 .filets { display: grid; gap: 0; margin-top: 3rem; border-top: 1px solid var(--encre); }
 .filets > * { padding: 1.5rem 0; border-bottom: 1px solid var(--encre); }
 @media (min-width: 760px) { .filets.x2 { grid-template-columns: 1fr 1fr; } .filets.x2 > :nth-child(odd) { padding-right: 2.5rem; border-right: 1px solid var(--encre); } .filets.x2 > :nth-child(even) { padding-left: 2.5rem; } }
 .filets p { margin-top: .5rem; color: var(--encre-douce); max-width: 32rem; }
-.cyan .filets p, .jaune .filets p { color: var(--encre); }
+.fond .filets p { color: var(--encre); }
 
 /* Profils marqués par une barre d'encre */
 .profils { list-style: none; padding: 0; margin: 3rem 0 0; }
@@ -105,8 +118,8 @@ h1, h2, h3, p { margin: 0; }
 .etapes span { display: block; color: var(--encre); opacity: .85; margin-top: .25rem; }
 @media (min-width: 900px) { .etapes { grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--encre); } .etapes li { grid-template-columns: 1fr; border-bottom: 0; padding: 1.4rem 1.5rem 1.4rem 0; } .etapes li + li { border-left: 1px solid var(--encre); padding-left: 1.5rem; } }
 
-/* Le deal : bandeau magenta, gros texte encre */
-.deal { background: var(--magenta); border-top: 1px solid var(--encre); border-bottom: 1px solid var(--encre); padding: clamp(3rem, 7vw, 5rem) 0; }
+/* Le deal : photo riso, gros texte encre */
+
 .deal .t-titre { max-width: 16ch; }
 .deal ol { margin: 2rem 0 0; padding-left: 1.3rem; max-width: 40rem; font-weight: 500; }
 .deal li + li { margin-top: .5rem; }
