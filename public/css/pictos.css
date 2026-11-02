@@ -1,0 +1,45 @@
+/* Pictogrammes animés des quatre éléments, repris de vjuju/design@2df7fba (sphere/) */
+  /* Pictogrammes des quatre éléments */
+  .picto { flex: none; width: 48px; height: 48px; overflow: visible; filter: drop-shadow(0 0 6px rgba(255, 106, 43, .35)); transition: opacity .3s; }
+  .picto-air, .picto-eau { filter: drop-shadow(0 0 6px rgba(77, 141, 255, .45)); }
+  .picto.away { opacity: 0; transform: scale(1.35); filter: blur(4px); transition: opacity .22s ease-out, transform .22s ease-out, filter .22s ease-out; }
+  .picto * { transform-box: fill-box; }
+  .picto-feu .f1 { transform-origin: 50% 100%; animation: flicker 1.3s ease-in-out infinite alternate; }
+  .picto-feu .f2 { transform-origin: 50% 100%; animation: flicker 0.9s ease-in-out infinite alternate-reverse; opacity: .9; }
+  .picto-feu .em { animation: ember 1.8s ease-in infinite; }
+  .picto-feu .em2 { animation-delay: .6s; }
+  .picto-feu .em3 { animation-delay: 1.2s; }
+  @keyframes flicker {
+    0% { transform: scale(1, 1) skewX(0deg); }
+    50% { transform: scale(.94, 1.07) skewX(-4deg); }
+    100% { transform: scale(1.04, .95) skewX(4deg); }
+  }
+  @keyframes ember { 0% { transform: translateY(6px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translate(3px, -14px); opacity: 0; } }
+
+  .picto-air .swirl path { stroke-dasharray: 26 8; animation: gust 1.6s linear infinite; }
+  .picto-air .w2 { animation-duration: 1.2s !important; }
+  .picto-air .w3 { stroke-dasharray: 5 4; animation-duration: 0.9s !important; }
+  .picto-air .swirl { transform-origin: 50% 50%; transform-box: view-box; animation: sway 3s ease-in-out infinite; }
+  .picto-air .motes { transform-origin: 50% 50%; transform-box: view-box; animation: spin 6s linear infinite; }
+  @keyframes gust { to { stroke-dashoffset: -34; } }
+  @keyframes sway { 0%, 100% { transform: translateX(-1.5px); } 50% { transform: translateX(1.5px); } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .picto-eau .d0 { transform-origin: 50% 50%; animation: wobble 2.6s ease-in-out infinite; }
+  .picto-eau .d1 { animation: drip 2.2s cubic-bezier(.5, 0, .9, .5) infinite; }
+  .picto-eau .d2 { animation: orbit 3.4s ease-in-out infinite; }
+  .picto-eau .d3 { animation: orbit 2.8s ease-in-out infinite reverse; }
+  .picto-eau .shine { animation: wobble 2.6s ease-in-out infinite; transform-origin: 50% 50%; }
+  @keyframes wobble { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.08, .93); } }
+  @keyframes drip { 0% { transform: translateY(-6px); } 70% { transform: translateY(16px); } 100% { transform: translateY(18px); opacity: 0; } }
+  @keyframes orbit { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-7px, -4px); } }
+
+  .picto-terre .s { transform-origin: 50% 50%; animation: assemble 3.6s cubic-bezier(.3, 0, .2, 1) infinite; animation-delay: calc(var(--i) * 90ms); }
+  @keyframes assemble {
+    0% { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: 0; }
+    35%, 82% { transform: none; opacity: 1; }
+    100% { transform: translate(calc(var(--dx) * .6), calc(var(--dy) * .6)) rotate(calc(var(--r) * .5)); opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { .picto *, .picto .motes { animation: none !important; } }
+

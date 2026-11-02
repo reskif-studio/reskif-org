@@ -1,23 +1,18 @@
 # reskif.org
 
-Site vitrine de l'association Reskif : page d'accueil et page **Impact Studio**.
+Site de l'association Reskif : accueil en scène 3D (« sphère ») et page **Impact Studio**.
 
-- HTML/CSS statique, sans build : tout est dans `public/`.
-- Hébergé sur **Cloudflare Pages** (projet `reskif-org`), déployé automatiquement à chaque push sur `main`.
-- Identité : communs [reskif-commons](https://github.com/reskif-studio/reskif-commons) @4dc85c1 (logo, Rubik, riso) ; encres jaune, cyan, magenta.
-- Design : skill frontend-design d'Anthropic, plan dans `content/design.md` (à relire avant toute refonte).
-- Contenu d'origine : la page Notion « Reskif — le réseau de kif » (voir `content/notion.md`).
+- HTML/CSS/JS statique, sans build : tout est dans `public/`. Hébergé sur Cloudflare Pages (`reskif-org`), en ligne à chaque push sur `main`.
+- Accueil : code repris de la maquette de Julien, [vjuju/design@2df7fba](https://github.com/vjuju/design/tree/main/sphere) (three.js 0.132 via jsDelivr, modèle `public/models/`). Ne réécrivez pas la scène : modifiez le texte des panneaux et les styles en tête du fichier.
+- Design system : [reskif-commons](https://github.com/reskif-studio/reskif-commons) (`brand/reskif.css`, `brand/pictos/`, `brand/sphere/`). Plan dans `content/design.md`, à relire avant toute refonte.
+- Contenu d'origine : page Notion « Reskif — le réseau de kif » (`content/notion.md`).
 
 ## Pages
 | URL | Fichier |
 |---|---|
-| `/` | `public/index.html` |
-| `/studio/` | `public/studio/index.html` |
+| `/` | `public/index.html` (scène 3D, panneaux, branches feu/air/eau/terre) |
+| `/studio/` | `public/studio/index.html` (styles : `public/css/reskif.css`, `public/css/pictos.css`) |
 | 404 | `public/404.html` |
 
-## Modifier
-1. Éditer le HTML dans `public/` (styles communs : `public/css/site.css`).
-2. Vérifier en local : `python3 -m http.server -d public 8080`.
-3. Commit + push sur `main` → en ligne en ~1 min.
-
-Photos : Unsplash (hotlink images.unsplash.com, nécessaire pour l'effet riso en CORS).
+## Crédits
+Sphère : Organic Sphere de Bruno Simon (MIT) · particules : The Spirit d'Edan Kwan (MIT, `public/LICENSE-The-Spirit.md`) · buste : Lee Perry-Smith par Infinite-Realities (CC BY 3.0, `public/models/LeePerrySmith-LICENSE.txt`) · arbre d'après Marius Ballot.

@@ -2,58 +2,50 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Page introuvable, Reskif</title>
   <meta name="description" content="Cette page n'existe pas.">
   <link rel="canonical" href="https://reskif.org/404">
+  <meta name="theme-color" content="#010101">
   <meta property="og:title" content="Page introuvable, Reskif">
   <meta property="og:description" content="Cette page n'existe pas.">
   <meta property="og:url" content="https://reskif.org/404">
+  <meta property="og:image" content="https://reskif.org/apercu.jpg">
   <meta property="og:site_name" content="Reskif">
   <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#ffcc00">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/site.css">
-  <script src="/js/riso.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,500&display=swap">
+  <link rel="stylesheet" href="/css/reskif.css">
+  <style>.vide { min-height: 72svh; display: grid; place-items: center; text-align: center; padding: 5rem 0; } .vide .colonne { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }</style>
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
-  <!-- Logo navbar : reskif-commons@4dc85c1 snippets/navbar-logo.html -->
   <header class="entete">
-    <div class="cadre">
-      <a href="/" class="logo" aria-label="Reskif, accueil"><img src="/reskif_logo.svg" alt="Reskif" width="92" height="28"></a>
+    <div class="rang">
+      <a class="logo" href="/" aria-label="Reskif, accueil"><img src="/reskif_logo.svg" alt="Reskif" width="92" height="28"></a>
       <nav aria-label="Navigation principale">
+        <a href="/">Accueil</a>
         <a href="/studio/">Le Studio</a>
-        <a href="/#contribuer">Contribuer</a>
-        <a href="/#projets">Les projets</a>
+        <a href="mailto:julien@reskif.org">Contact</a>
       </nav>
-      <a class="bouton" href="mailto:julien@reskif.org?subject=Mon%20projet%20pour%20l'Impact%20Studio">Proposer un projet</a>
     </div>
   </header>
-  <main id="contenu" class="hero jaune" style="min-height:70svh">
-    <div class="cadre" style="display:block">
-      <h1 class="t-affiche" style="max-width:12ch">Pas de kif à cette adresse.</h1>
-      <p class="t-chapo">Cette page n'existe pas ou a changé d'adresse.</p>
-      <div class="actions"><a class="bouton grand" href="/">Revenir à l'accueil</a></div>
+  <main id="contenu" class="vide">
+    <div class="colonne">
+      <h1 class="titre-xl">Rien ici</h1>
+      <p class="dict"><span class="sc">Erreur 404</span>, nom féminin. Adresse qui ne mène nulle part.</p>
+      <p class="lede">Cette page n'existe pas ou a changé d'adresse.</p>
+      <div class="actions"><a class="pilule pleine" href="/">Revenir à l'accueil</a><a class="pilule" href="/studio/">Voir l'Impact Studio</a></div>
     </div>
   </main>
   <footer class="pied">
-    <div class="cadre">
-      <a href="/" aria-label="Reskif, accueil"><img src="/reskif_logo.svg" alt="Reskif" width="92" height="28"></a>
-      <p>Reskif, l'association du réseau de kif.<br>Mettre le virtuel au service du vivant.</p>
-      <nav aria-label="Pied de page">
-        <a href="/studio/">L'Impact Studio</a>
-        <a href="/#contribuer">Contribuer</a>
-        <a href="https://app.reskif.org">L'app Reskif</a>
-        <a href="mailto:julien@reskif.org">Écrire à Julien</a>
-      </nav>
-      <p class="credit">Photos : <a href="https://unsplash.com/?utm_source=reskif&amp;utm_medium=referral">Unsplash</a>, tramées avec l'effet riso des communs Reskif.</p>
+    <div class="colonne">
+      <a href="/" aria-label="Reskif, accueil"><img src="/reskif_logo.svg" alt="Reskif" width="79" height="24"></a>
+      <span>Reskif, association. Le virtuel au service du réel.</span>
+      <nav aria-label="Pied de page"><a href="/">Accueil</a><a href="/studio/">L'Impact Studio</a><a href="https://app.reskif.org">L'app Reskif</a><a href="mailto:julien@reskif.org">Écrire à Julien</a></nav>
     </div>
   </footer>
 </body>

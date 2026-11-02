@@ -2,158 +2,221 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>L'Impact Studio de Reskif</title>
-  <meta name="description" content="Un start-up studio pour les projets qui font du bien à la société ou à l'environnement. Un mois d'accompagnement, 1 000 €, on ne garde rien.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>L'Impact Studio, Reskif</title>
+  <meta name="description" content="Un start-up studio pour les projets qui prennent soin du vivant. Un mois d'accompagnement, 1 000 € par projet, Reskif ne garde rien.">
   <link rel="canonical" href="https://reskif.org/studio/">
-  <meta property="og:title" content="L'Impact Studio de Reskif">
-  <meta property="og:description" content="Un start-up studio pour les projets qui font du bien à la société ou à l'environnement. Un mois d'accompagnement, 1 000 €, on ne garde rien.">
+  <meta name="theme-color" content="#010101">
+  <meta property="og:title" content="L'Impact Studio, Reskif">
+  <meta property="og:description" content="Un start-up studio pour les projets qui prennent soin du vivant. Un mois d'accompagnement, 1 000 € par projet, Reskif ne garde rien.">
   <meta property="og:url" content="https://reskif.org/studio/">
+  <meta property="og:image" content="https://reskif.org/apercu.jpg">
   <meta property="og:site_name" content="Reskif">
   <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#00aaff">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/site.css">
-  <script src="/js/riso.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,500&display=swap">
+  <link rel="stylesheet" href="/css/reskif.css">
+  <link rel="stylesheet" href="/css/pictos.css">
+  <style>
+    .ouverture { position: relative; overflow: hidden; min-height: min(86svh, 54rem); display: grid; place-items: center; text-align: center; padding: 6rem 0 5rem; isolation: isolate; }
+    .lueur { position: absolute; z-index: -1; left: 50%; top: 50%; width: min(78vmin, 640px); aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; filter: blur(60px); opacity: .55;
+      background: radial-gradient(circle at 35% 35%, #ff6a2b 0%, transparent 55%), radial-gradient(circle at 68% 62%, #4d8dff 0%, transparent 58%), radial-gradient(circle at 50% 50%, #5b1cff 0%, transparent 70%);
+      animation: souffle 9s ease-in-out infinite; }
+    @keyframes souffle { 0%, 100% { scale: 1; } 50% { scale: 1.08; } }
+    .ouverture .pile { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
+    .ouverture .lede { max-width: 30ch; }
+    .ouverture .actions { justify-content: center; margin-top: .6rem; }
+    .duo { display: grid; gap: 2rem; }
+    @media (min-width: 900px) { .duo { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 4rem; align-items: start; } }
+    .duo > div > * + * { margin-top: 1.1rem; }
+    .temps { list-style: none; margin: 0; padding: 0; counter-reset: t; border-top: 1px solid var(--line); }
+    .temps li { counter-increment: t; display: grid; grid-template-columns: 3rem 1fr; gap: .25rem 1rem; padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
+    .temps li::before { content: counter(t); grid-row: span 2; font: 800 2rem/1 var(--display); color: var(--warm); }
+    .temps li:nth-child(even)::before { color: var(--cold); }
+    .temps b { font: 700 1.15rem/1.2 var(--display); }
+    .temps span { color: var(--muted); }
+    .deal .titre-xl { max-width: 20ch; font-size: clamp(2.2rem, 6.4vw, 5.2rem); }
+    .deal ol { margin: 1.5rem 0 0; padding-left: 1.3rem; color: var(--muted); max-width: 38rem; }
+    .deal li + li { margin-top: .4rem; }
+    .verbes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+    .verbes li { display: grid; gap: .2rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    @media (min-width: 640px) { .verbes li { grid-template-columns: 13rem 1fr; align-items: baseline; } }
+    .verbes b { font: 800 1.3rem/1.1 var(--display); text-transform: uppercase; letter-spacing: -.01em; }
+    .verbes span { color: var(--muted); }
+    .profils { display: grid; gap: 12px; margin-top: 2.5rem; }
+    @media (min-width: 760px) { .profils { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .profils .verre { display: flex; gap: 16px; align-items: flex-start; }
+    .profils .picto { margin-top: .2rem; }
+    .profils b { display: block; font: 700 1.2rem/1.15 var(--display); font-style: normal; }
+    .profils p { margin-top: .4rem; color: var(--muted); font-size: 1.05rem; }
+    .profils a { display: inline-block; margin-top: .8rem; font: 500 11px/1 var(--display); font-style: normal; letter-spacing: .14em; text-transform: uppercase; }
+    .projets { list-style: none; margin: 2.5rem 0 0; padding: 0; border-top: 1px solid var(--line); }
+    .projets li { display: grid; gap: .4rem; padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+    @media (min-width: 900px) { .projets li { grid-template-columns: 14rem 1fr 11rem; gap: 2.5rem; align-items: baseline; } }
+    .projets b { font: 800 1.35rem/1.05 var(--display); text-transform: uppercase; font-style: normal; }
+    .projets p { color: var(--muted); max-width: 40rem; }
+    .projets a { font: 500 12px/1 var(--display); font-style: normal; letter-spacing: .08em; }
+    .bientot { margin-top: 3rem; }
+    .bientot ul { margin: 1rem 0 0; padding: 0; list-style: none; columns: 2 18rem; column-gap: 3rem; }
+    .bientot li { break-inside: avoid; padding: .6rem 0; color: var(--muted); }
+    .bientot li b { color: var(--ink); font: 700 1rem/1.2 var(--display); font-style: normal; }
+  </style>
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
-  <!-- Logo navbar : reskif-commons@4dc85c1 snippets/navbar-logo.html -->
   <header class="entete">
-    <div class="cadre">
-      <a href="/" class="logo" aria-label="Reskif, accueil"><img src="/reskif_logo.svg" alt="Reskif" width="92" height="28"></a>
+    <div class="rang">
+      <a class="logo" href="/" aria-label="Reskif, accueil"><img src="/reskif_logo.svg" alt="Reskif" width="92" height="28"></a>
       <nav aria-label="Navigation principale">
+        <a href="/">Accueil</a>
         <a href="/studio/" aria-current="page">Le Studio</a>
-        <a href="/#contribuer">Contribuer</a>
-        <a href="/#projets">Les projets</a>
+        <a href="mailto:julien@reskif.org">Contact</a>
       </nav>
-      <a class="bouton" href="mailto:julien@reskif.org?subject=Mon%20projet%20pour%20l'Impact%20Studio">Proposer un projet</a>
     </div>
   </header>
   <main id="contenu">
-    <section class="hero cyan">
-      <div class="cadre">
-        <div>
-          <h1 class="t-affiche">Kiffe et fais kiffer.</h1>
-          <p class="t-chapo">L'Impact Studio est un start-up studio pour les projets qui font du bien à la société ou à l'environnement. Comme Y Combinator ou Hexa, on accompagne des projets de l'idée au lancement. Sauf qu'on ne prend pas de capital : on garde juste la fierté d'avoir été là au début.</p>
-          <div class="actions">
-            <a class="bouton grand" href="mailto:julien@reskif.org?subject=Mon%20projet%20pour%20l'Impact%20Studio">Proposer mon projet</a>
-            <a class="bouton grand creux" href="#deal">Voir le deal</a>
-          </div>
-        </div>
-        <!-- unsplash:photo-1783867176137-5ef208ef3eaa -->
-        <figure style="margin:0">
-          <div class="tirage">
-            <div class="passage" data-riso data-image="https://images.unsplash.com/photo-1783867176137-5ef208ef3eaa?w=1400&amp;q=80&amp;fit=crop" data-ink="#ff00e5" data-paper="#00aaff" data-brightness="0.05" data-contrast="0.25" data-shader-contrast="0.85" data-dot-size="6" data-angle="45" data-alt="Une petite équipe au travail sur un balcon"></div>
-            <div class="passage" data-riso data-image="https://images.unsplash.com/photo-1783867176137-5ef208ef3eaa?w=1400&amp;q=80&amp;fit=crop" data-ink="#ffcc00" data-paper="#ffffff" data-brightness="0.38" data-contrast="0.2" data-shader-contrast="0.75" data-dot-size="5" data-angle="15" data-grain="0.1" aria-hidden="true"></div>
-          </div>
-        </figure>
-      </div>
-    </section>
-
-    <section class="bloc">
-      <div class="cadre duo">
-        <h2 class="t-titre">Pour qui ? Pour tout le monde.</h2>
-        <div class="t-texte t-chapo">
-          <p><strong>Pas de barrière.</strong> Assos, side-projects, étudiant·es, collectifs, solo ou en équipe, idée vague ou projet méga abouti.</p>
-          <p>Pour l'instant, c'est Julien qui choisit les projets, sur deux critères : <strong>le fit</strong> (le projet et ses porteur·ses collent à l'esprit Reskif) et <strong>l'impact attendu</strong> sur la société ou l'environnement.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="bloc jaune">
-      <div class="cadre">
-        <h2 class="t-titre" style="max-width:15ch">Un mois au studio, idéalement.</h2>
-        <p class="t-chapo" style="margin-top:1.5rem">Quatre projets au maximum en parallèle, pour que chacun soit vraiment accompagné. Tu entres au fil de l'eau, dès qu'une place se libère.</p>
-        <ol class="etapes">
-          <li><div><strong>Call de découverte</strong><span>On fait connaissance, tu racontes ton projet.</span></div></li>
-          <li><div><strong>Call de lancement</strong><span>On fixe ensemble l'objectif du mois.</span></div></li>
-          <li><div><strong>Construction</strong><span>Tu avances avec Jean-Claude et les expert·es du Discord.</span></div></li>
-          <li><div><strong>Call de sortie</strong><span>On fait le bilan. Bien souvent, ton projet est en ligne.</span></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="bloc">
-      <div class="cadre duo">
-        <h2 class="t-titre">Ce que tu reçois.</h2>
-        <div class="filets" style="margin-top:0">
-          <div><h3 class="t-inter">Le Discord du studio</h3><p>Des pointures de différents domaines, prêtes à donner un coup de main.</p></div>
-          <div><h3 class="t-inter">Jean-Claude</h3><p>L'IA du studio, sur-entraînée à avoir de l'impact.</p></div>
-          <div><h3 class="t-inter">Les frais techniques</h3><p>Serveurs, nom de domaine et IA pris en charge pendant l'accompagnement.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="deal" id="deal">
-      <div class="cadre">
-        <h2 class="t-titre">1 000 € par projet. On ne garde rien.</h2>
-        <p class="t-chapo" style="margin-top:1.25rem;font-weight:500">Pas de capital, pas de part sur les revenus. Les 1 000 € vont à l'association et servent à :</p>
-        <ol>
-          <li>faire vivre le studio et la personne qui accompagne les projets ;</li>
-          <li>couvrir les frais d'accompagnement : serveurs, domaine, IA ;</li>
-          <li>créer de l'engagement : un montant qui compte, sans décourager.</li>
-        </ol>
-        <p class="t-chapo" style="margin-top:1.5rem"><strong>Tu n'as pas les 1 000 € ?</strong> Un financeur du réseau peut les payer pour toi.</p>
-      </div>
-    </section>
-
-    <section class="bloc cyan">
-      <div class="cadre duo">
-        <div>
-          <h2 class="t-titre">Jean-Claude ne conseille pas. Il exécute.</h2>
-          <p class="t-chapo" style="margin-top:1.5rem">C'est l'IA du studio. Elle travaille avec toi, dans le salon Discord de ton projet.</p>
-        </div>
-        <ul class="verbes" style="margin-top:0">
-          <li><strong>Il code</strong><span>ton site ou ton app</span></li>
-          <li><strong>Il déploie</strong><span>ton projet en ligne</span></li>
-          <li><strong>Il rédige</strong><span>textes, dossiers, messages</span></li>
-          <li><strong>Il met en relation</strong><span>avec les expert·es du réseau</span></li>
-          <li><strong>Il outille</strong><span>avec tous les outils du studio</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="bloc">
-      <div class="cadre duo">
-        <h2 class="t-titre">On suit l'impact pendant deux ans.</h2>
-        <div class="t-texte t-chapo">
-          <p>Chaque projet sorti du studio fait un point à <strong>6 mois, 1 an et 2 ans</strong>. Trois questions à chaque fois : le projet est-il toujours vivant ? Combien de personnes touche-t-il ? Quels liens a-t-il créés, à soi, aux autres, à la nature ?</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="bloc">
-      <div class="cadre">
-        <h2 class="t-titre" style="max-width:16ch">Tu veux aider sans porter de projet ?</h2>
-        <ul class="profils">
-          <li><span class="barre" style="background:var(--magenta)"></span><h3 class="t-inter">Financeurs</h3><p>Donne au pot commun pour les prochains projets qui arrivent les mains vides, ou sponsorise un projet en attente que tu choisis. Tu suis ensuite chaque point d'étape.</p></li>
-          <li><span class="barre" style="background:var(--cyan)"></span><h3 class="t-inter">Expert·es</h3><p>Quelques heures par mois au maximum : tu partages ton savoir avec les porteurs et porteuses de projets sur le Discord.</p></li>
-        </ul>
+    <section class="ouverture">
+      <div class="lueur" aria-hidden="true"></div>
+      <div class="colonne pile">
+        <h1 class="titre-xl">L'Impact Studio</h1>
+        <p class="dict"><span class="sc">Studio</span>, nom masculin. Première brique de <i>Reskif</i> : on y fait grandir des projets tournés vers le vivant.</p>
+        <p class="lede">Comme un start-up studio, de l'idée au lancement. Sauf que Reskif ne prend pas de capital : il garde seulement la fierté d'avoir été là au début.</p>
         <div class="actions">
-          <a class="bouton grand" href="mailto:julien@reskif.org?subject=Je%20finance%20un%20projet%20Reskif">Financer un projet</a>
-          <a class="bouton grand creux" href="mailto:julien@reskif.org?subject=Je%20donne%20du%20temps%20%C3%A0%20Reskif">Donner du temps</a>
+          <a class="pilule pleine" href="mailto:julien@reskif.org?subject=Mon%20projet%20pour%20l'Impact%20Studio">Proposer un projet</a>
+          <a class="pilule" href="#deal">Voir le deal</a>
         </div>
+      </div>
+    </section>
+
+    <section class="bloc">
+      <div class="colonne duo">
+        <h2 class="titre">Pour qui&nbsp;?</h2>
+        <div>
+          <p class="lede">Pour tout le monde. <strong>Aucune barrière.</strong></p>
+          <p class="texte">Assos, side-projects, étudiant·es, collectifs, en solo ou en équipe, avec une idée encore floue ou un projet méga abouti à qui il manque des bras.</p>
+          <p class="texte">Pour l'instant, Julien choisit les projets sur deux critères : <strong>le fit</strong> avec l'esprit Reskif, et <strong>l'impact attendu</strong> sur la société ou l'environnement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloc">
+      <div class="colonne duo">
+        <div>
+          <h2 class="titre">Un mois au studio</h2>
+          <p class="texte">Quatre projets au maximum en même temps, pour que chacun soit vraiment accompagné. Vous entrez dès qu'une place se libère.</p>
+        </div>
+        <ol class="temps">
+          <li><b>Call de découverte</b><span>On fait connaissance, vous racontez votre projet.</span></li>
+          <li><b>Call de lancement</b><span>On fixe ensemble l'objectif du mois.</span></li>
+          <li><b>Construction</b><span>Vous avancez avec Jean-Claude et les expert·es du Discord.</span></li>
+          <li><b>Call de sortie</b><span>On fait le bilan. Bien souvent, le projet est en ligne.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bloc deal" id="deal">
+      <div class="colonne">
+        <span class="kicker">Le deal</span>
+        <h2 class="titre-xl" style="margin-top:1.25rem">1 000 € par projet. On ne garde rien.</h2>
+        <p class="lede" style="margin-top:1.5rem;max-width:34ch">Pas de capital, pas de part sur les revenus. Les 1 000 € vont à l'association.</p>
+        <ol class="texte">
+          <li>Ils font vivre le studio et la personne qui accompagne les projets.</li>
+          <li>Ils couvrent les frais pendant le mois : serveurs, nom de domaine, IA.</li>
+          <li>Ils créent de l'engagement : un montant qui compte, sans décourager.</li>
+        </ol>
+        <p class="texte" style="margin-top:1.25rem"><strong>Vous n'avez pas les 1 000 € ?</strong> Un financeur du réseau peut les payer pour vous.</p>
+      </div>
+    </section>
+
+    <section class="bloc">
+      <div class="colonne duo">
+        <div>
+          <span class="kicker c">L'IA du studio</span>
+          <h2 class="titre" style="margin-top:1.25rem">Jean-Claude exécute</h2>
+          <p class="texte" style="margin-top:1.25rem">Il ne se contente pas de conseiller. Il travaille avec vous dans le salon Discord de votre projet, aux côtés des expert·es du réseau.</p>
+        </div>
+        <ul class="verbes">
+          <li><b>Il code</b><span>votre site ou votre app</span></li>
+          <li><b>Il déploie</b><span>le projet en ligne</span></li>
+          <li><b>Il rédige</b><span>textes, dossiers, messages</span></li>
+          <li><b>Il met en relation</b><span>avec les expert·es du réseau</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="bloc">
+      <div class="colonne">
+        <h2 class="titre">Et vous, qui êtes-vous&nbsp;?</h2>
+        <div class="profils">
+          <div class="verre w"><svg class="picto picto-feu" viewBox="0 0 48 48" aria-hidden="true">
+            <defs><linearGradient id="g-feu" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff3d6"/><stop offset=".3" stop-color="#ffb347"/><stop offset=".62" stop-color="#ff3e00"/><stop offset="1" stop-color="#5b1cff"/></linearGradient></defs>
+            <path class="f1" d="M24 46c-9 0-15-6-15-14 0-7 5-11 7-17 1 4 3 6 5 7 0-6 3-12 8-17 0 7 4 11 7 15 2 3 3 6 3 10 0 9-6 16-15 16z" fill="url(#g-feu)"/>
+            <path class="f2" d="M24 46c-5 0-8-3-8-8 0-4 3-6 4-10 1 2 2 3 3 3 0-3 2-6 4-8 0 4 2 6 3 8 1 2 2 4 2 6 0 5-3 9-8 9z" fill="#fff3d6"/>
+            <circle class="em" cx="13" cy="24" r="1.3" fill="#ffb347"/><circle class="em em2" cx="35" cy="20" r="1.1" fill="#ff7a3d"/><circle class="em em3" cx="28" cy="10" r=".9" fill="#fff3d6"/>
+          </svg><div><b>Financeur·se</b><p>Vous donnez au pot commun ou vous sponsorisez un projet en attente. Vous suivez ensuite chaque point d'étape.</p><a href="mailto:julien@reskif.org?subject=Je%20finance%20un%20projet%20Reskif">Financer un projet</a></div></div>
+          <div class="verre c"><svg class="picto picto-air" viewBox="0 0 48 48" aria-hidden="true">
+            <g class="swirl" fill="none" stroke-linecap="round" stroke-width="3">
+              <path class="w1" d="M5 19h23a6 6 0 1 0-6-6" stroke="#e6eeff"/>
+              <path class="w2" d="M5 27h31a6 6 0 1 1-6 6" stroke="#4d8dff"/>
+              <path class="w3" d="M9 35h11" stroke="#9cc0ff"/>
+            </g>
+            <g class="motes"><circle cx="40" cy="12" r="1.6" fill="#e6eeff"/><circle cx="8" cy="40" r="1.2" fill="#4d8dff"/><circle cx="42" cy="38" r="1" fill="#ff7a3d"/><circle cx="14" cy="8" r="1" fill="#9cc0ff"/></g>
+          </svg><div><b>Éclaireur·se</b><p>Vos idées, vos rencontres et vos intuitions ouvrent la voie et portent le réseau plus loin.</p><a href="mailto:julien@reskif.org?subject=Je%20rejoins%20Reskif%20comme%20%C3%A9claireur%C2%B7se">Rejoindre le réseau</a></div></div>
+          <div class="verre w"><svg class="picto picto-eau" viewBox="0 0 48 48" aria-hidden="true">
+            <defs>
+              <filter id="goo" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"/></filter>
+              <radialGradient id="g-eau" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#cfe0ff"/><stop offset=".35" stop-color="#4d6dff"/><stop offset="1" stop-color="#1c0a8a"/></radialGradient>
+            </defs>
+            <g filter="url(#goo)" fill="url(#g-eau)">
+              <circle class="d0" cx="24" cy="31" r="11"/><circle class="d1" cx="24" cy="9" r="4.5"/><circle class="d2" cx="33" cy="31" r="5"/><circle class="d3" cx="15" cy="33" r="4"/>
+            </g>
+            <ellipse class="shine" cx="20" cy="26" rx="3" ry="1.8" fill="#ffffff" opacity=".85"/>
+          </svg><div><b>Expert·e</b><p>Quelques heures par mois au maximum, pour partager votre savoir-faire sur le Discord.</p><a href="mailto:julien@reskif.org?subject=Je%20propose%20mon%20expertise%20%C3%A0%20Reskif">Proposer mon aide</a></div></div>
+          <div class="verre c"><svg class="picto picto-terre" viewBox="0 0 48 48" aria-hidden="true">
+            <polygon class="s" style="--dx:-14px;--dy:-10px;--r:-80deg;--i:6" points="16,11 24,4 24,16" fill="#efe9df"/>
+            <polygon class="s" style="--dx:14px;--dy:-12px;--r:70deg;--i:7" points="24,4 32,11 24,16" fill="#ff8a5c"/>
+            <polygon class="s" style="--dx:-16px;--dy:2px;--r:110deg;--i:4" points="16,11 24,16 16,21" fill="#d6cfc4"/>
+            <polygon class="s" style="--dx:16px;--dy:0px;--r:-120deg;--i:5" points="32,11 32,21 24,16" fill="#ff6a2b"/>
+            <polygon class="s" style="--dx:-12px;--dy:8px;--r:60deg;--i:2" points="16,21 24,16 24,27" fill="#8fa8ff"/>
+            <polygon class="s" style="--dx:12px;--dy:10px;--r:-70deg;--i:3" points="24,16 32,21 24,27" fill="#e2dbd0"/>
+            <polygon class="s" style="--dx:0px;--dy:14px;--r:90deg;--i:1" points="20,26 28,26 29,33 19,33" fill="#c9c2b8"/>
+            <polygon class="s" style="--dx:-16px;--dy:14px;--r:-50deg;--i:0" points="7,45 19,33 24,35 24,45" fill="#4d6dff"/>
+            <polygon class="s" style="--dx:16px;--dy:14px;--r:50deg;--i:0" points="24,45 24,35 29,33 41,45" fill="#ff8a5c"/>
+          </svg><div><b>Porteur·se de projet</b><p>Une idée, même floue, ou un projet qui cherche des allié·es pour grandir.</p><a href="mailto:julien@reskif.org?subject=Mon%20projet%20pour%20l'Impact%20Studio">Proposer un projet</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloc">
+      <div class="colonne">
+        <h2 class="titre">Déjà passés par le studio</h2>
+        <ul class="projets">
+          <li><b>Mobilisator</b><p>#RIENSANSNOUS : on tape sa ville et on découvre combien de jeunes peuvent faire la différence aux municipales 2026. Bureau de vote, procuration, rappel dans l'agenda.</p><a href="https://mobilisator.fr">mobilisator.fr</a></li>
+          <li><b>On veut vivre</b><p>L'appel des parents et des adultes en soutien aux mobilisations lycéennes pour le climat : « Les enfants veulent vivre, pas survivre ».</p><a href="https://onveutvivre.fr">onveutvivre.fr</a></li>
+          <li><b>Festival Déclic</b><p>Trois jours de festival militant au château de Jambville, du 29 juin au 1er juillet 2026. Le site sert d'appli sur place : programme, plan, missions bénévoles.</p><a href="https://festivaldeclic.com">festivaldeclic.com</a></li>
+          <li><b>Réseau des Tempêtes</b><p>En Chaude Compagnie : un kit pour lancer un réseau d'entraide dans son immeuble, sa rue ou son village face aux canicules.</p><a href="https://onestpaspret.com">onestpaspret.com</a></li>
+        </ul>
+        <div class="bientot">
+          <h3 class="titre-s">En cours d'intégration</h3>
+          <ul>
+            <li><b><a href="http://gigot.app">gigot.app</a></b> : un agenda pour ne rater aucune occasion de gigoter</li>
+            <li><b>voisinssympas</b> : des stickers et une app pour répandre l'entraide</li>
+            <li><b>swipetonavis</b> : un Tinder qui vous matche avec votre candidat aux présidentielles</li>
+            <li><b>organizm</b> : l'organisation opale à l'ère de l'IA</li>
+          </ul>
+        </div>
+        <p class="texte" style="margin-top:3rem">On suit chaque projet à 6 mois, 1 an et 2 ans : est-il toujours vivant, combien de personnes touche-t-il, quels liens a-t-il créés&nbsp;?</p>
       </div>
     </section>
   </main>
   <footer class="pied">
-    <div class="cadre">
-      <a href="/" aria-label="Reskif, accueil"><img src="/reskif_logo.svg" alt="Reskif" width="92" height="28"></a>
-      <p>Reskif, l'association du réseau de kif.<br>Mettre le virtuel au service du vivant.</p>
-      <nav aria-label="Pied de page">
-        <a href="/studio/">L'Impact Studio</a>
-        <a href="/#contribuer">Contribuer</a>
-        <a href="https://app.reskif.org">L'app Reskif</a>
-        <a href="mailto:julien@reskif.org">Écrire à Julien</a>
-      </nav>
-      <p class="credit">Photos : <a href="https://unsplash.com/?utm_source=reskif&amp;utm_medium=referral">Unsplash</a>, tramées avec l'effet riso des communs Reskif.</p>
+    <div class="colonne">
+      <a href="/" aria-label="Reskif, accueil"><img src="/reskif_logo.svg" alt="Reskif" width="79" height="24"></a>
+      <span>Reskif, association. Le virtuel au service du réel.</span>
+      <nav aria-label="Pied de page"><a href="/">Accueil</a><a href="/studio/">L'Impact Studio</a><a href="https://app.reskif.org">L'app Reskif</a><a href="mailto:julien@reskif.org">Écrire à Julien</a></nav>
     </div>
   </footer>
 </body>

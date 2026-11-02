@@ -1,0 +1,81 @@
+/* Design system Reskif « sphère » — reskif-commons (brand/reskif.css)
+ * Source : vjuju/design@2df7fba (sphere/). Un seul univers : la nuit.
+ * Polices (Google Fonts) : Syne 500/700/800 · Fraunces italique 300/500 · EB Garamond 400/500 + italique.
+ */
+:root {
+  --night: #010101;               /* fond unique */
+  --ink: #ffffff;                 /* texte, traits forts */
+  --muted: rgba(255, 255, 255, .62);
+  --line: rgba(255, 255, 255, .22);
+  --glass: rgba(10, 4, 24, .55);  /* panneaux en verre dépoli */
+  --warm: #ffb08a;                /* rôles « chauds » : financer, conseiller (feu, eau) */
+  --cold: #9cc0ff;                /* rôles « froids » : éclairer, porter (air, terre) */
+  --warm-vif: #ff6a2b;
+  --cold-vif: #4d8dff;
+  --violet: #5b1cff;
+  --display: "Syne", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --text: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --dict: "EB Garamond", Garamond, "Times New Roman", serif;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--night); color: var(--ink); font: 300 italic 1.15rem/1.5 var(--text); -webkit-font-smoothing: antialiased; }
+::selection { background: #ffffff22; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--warm); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+.skip { position: absolute; left: -999px; top: .5rem; z-index: 100; background: var(--ink); color: var(--night); padding: .6rem 1rem; font: 500 12px/1 var(--display); }
+.skip:focus { left: .5rem; }
+
+/* Typographie */
+.titre-xl { font: 800 clamp(2.6rem, 10vmin, 7rem)/.92 var(--display); text-transform: uppercase; letter-spacing: -.015em; text-wrap: balance; }
+.titre { font: 800 clamp(1.7rem, 3.6vw, 3rem)/.98 var(--display); text-transform: uppercase; letter-spacing: -.01em; text-wrap: balance; }
+.titre-s { font: 700 clamp(1.1rem, 2.4vmin, 1.4rem)/1.15 var(--display); }
+.lede { font: 300 italic clamp(1.3rem, 3.2vmin, 2rem)/1.3 var(--text); text-wrap: balance; }
+.texte { font: 300 italic 1.15rem/1.55 var(--text); color: var(--muted); max-width: 36rem; }
+.texte strong, .lede strong { font-weight: 500; color: var(--ink); }
+.dict { font: 400 clamp(1.2rem, 2.6vmin, 1.6rem)/1.35 var(--dict); color: var(--muted); letter-spacing: .01em; }
+.dict .sc { font-variant: small-caps; letter-spacing: .04em; color: var(--ink); }
+.dict i { color: var(--ink); }
+.kicker { font: 500 12px/1 var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--warm); }
+.kicker.c { color: var(--cold); }
+.role { font-weight: 500; font-style: normal; font-family: var(--display); }
+.role.w { color: var(--warm); }
+.role.c { color: var(--cold); }
+
+/* En-tête */
+.entete { position: sticky; top: 0; z-index: 20; background: rgba(1,1,1,.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.entete .rang { max-width: 72rem; margin: 0 auto; padding: .8rem clamp(1.25rem, 4vw, 2.5rem); display: flex; align-items: center; gap: 1.5rem; }
+.entete .logo img { height: 28px; width: auto; }
+.entete nav { display: flex; gap: clamp(.9rem, 3vw, 1.5rem); margin-left: auto; }
+.entete nav a { white-space: nowrap; font: 500 11px/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: .5rem 0; }
+.entete nav a:hover, .entete nav a[aria-current="page"] { color: var(--ink); }
+
+/* Boutons pilule */
+.pilule { display: inline-flex; align-items: center; gap: .5rem; font: 500 12px/1 var(--display); letter-spacing: .14em; text-transform: uppercase; text-decoration: none;
+  color: var(--ink); background: var(--glass); border: 1px solid var(--line); border-radius: 999px; padding: 14px 20px; cursor: pointer;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: border-color .2s, background .2s, color .2s; }
+.pilule:hover { border-color: var(--ink); }
+.pilule.pleine { background: var(--ink); color: var(--night); border-color: var(--ink); }
+.pilule.pleine:hover { background: var(--warm); border-color: var(--warm); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2rem; }
+
+/* Panneaux de verre */
+.verre { background: var(--glass); border: 1px solid var(--line); border-radius: 18px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 20px 22px; }
+.verre.w { border-color: rgba(255, 176, 138, .45); }
+.verre.c { border-color: rgba(156, 192, 255, .45); }
+
+/* Mise en page */
+.colonne { max-width: 72rem; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+.bloc { padding: clamp(4.5rem, 12vmin, 8rem) 0; border-top: 1px solid var(--line); }
+
+/* Pied de page */
+.pied { border-top: 1px solid var(--line); padding: 2.5rem 0 3rem; font: 400 13px/1.5 var(--display); color: var(--muted); }
+.pied .colonne { display: flex; flex-wrap: wrap; gap: 1.25rem 2.5rem; align-items: center; justify-content: space-between; }
+.pied img { height: 24px; width: auto; }
+.pied nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.pied nav a { text-decoration: none; color: var(--ink); }
+.pied nav a:hover { color: var(--warm); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
