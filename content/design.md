@@ -36,7 +36,8 @@ Verre : rgba(10,4,24,.55) + flou 10 px pour les panneaux posés sur la scène.
 POUR QUI            | texte italique
 UN MOIS AU STUDIO   | 1 Découverte  2 Lancement  3 Construction  4 Sortie
 LE DEAL             | 1 000 € PAR PROJET. ON NE GARDE RIEN.
-JEAN-CLAUDE         | verbes en Syne, compléments en Fraunces
+ALL. ION. ME.       | la plateforme (texte)
+ION                 | verbes en Syne, compléments en Fraunces
 QUATRE PROFILS      | 4 panneaux de verre avec les pictos animés (feu/air/eau/terre)
 LES PROJETS         | lignes : nom (Syne) | résumé (Fraunces) | lien
 ```
