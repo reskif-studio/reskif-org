@@ -41,6 +41,7 @@
     .deal .titre-xl { max-width: 20ch; font-size: clamp(2.2rem, 6.4vw, 5.2rem); }
     .deal ol { margin: 1.5rem 0 0; padding-left: 1.3rem; color: var(--muted); max-width: 38rem; }
     .deal li + li { margin-top: .4rem; }
+    .profils .lvl { display: block; font: 500 11px/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .45rem; }
     .verbes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
     .verbes li { display: grid; gap: .2rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
     @media (min-width: 640px) { .verbes li { grid-template-columns: 13rem 1fr; align-items: baseline; } }
@@ -159,12 +160,6 @@
       <div class="colonne">
         <h2 class="titre">Et vous, qui êtes-vous&nbsp;?</h2>
         <div class="profils">
-          <div class="verre w"><svg class="picto picto-feu" viewBox="0 0 48 48" aria-hidden="true">
-            <defs><linearGradient id="g-feu" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff3d6"/><stop offset=".3" stop-color="#ffb347"/><stop offset=".62" stop-color="#ff3e00"/><stop offset="1" stop-color="#5b1cff"/></linearGradient></defs>
-            <path class="f1" d="M24 46c-9 0-15-6-15-14 0-7 5-11 7-17 1 4 3 6 5 7 0-6 3-12 8-17 0 7 4 11 7 15 2 3 3 6 3 10 0 9-6 16-15 16z" fill="url(#g-feu)"/>
-            <path class="f2" d="M24 46c-5 0-8-3-8-8 0-4 3-6 4-10 1 2 2 3 3 3 0-3 2-6 4-8 0 4 2 6 3 8 1 2 2 4 2 6 0 5-3 9-8 9z" fill="#fff3d6"/>
-            <circle class="em" cx="13" cy="24" r="1.3" fill="#ffb347"/><circle class="em em2" cx="35" cy="20" r="1.1" fill="#ff7a3d"/><circle class="em em3" cx="28" cy="10" r=".9" fill="#fff3d6"/>
-          </svg><div><b>Financeur·se</b><p>Vous donnez au pot commun ou vous sponsorisez un projet en attente. Vous suivez ensuite chaque point d'étape.</p><a href="mailto:julien@reskif.org?subject=Je%20finance%20un%20projet%20Reskif">Financer un projet</a></div></div>
           <div class="verre c"><svg class="picto picto-air" viewBox="0 0 48 48" aria-hidden="true">
             <g class="swirl" fill="none" stroke-linecap="round" stroke-width="3">
               <path class="w1" d="M5 19h23a6 6 0 1 0-6-6" stroke="#e6eeff"/>
@@ -172,7 +167,7 @@
               <path class="w3" d="M9 35h11" stroke="#9cc0ff"/>
             </g>
             <g class="motes"><circle cx="40" cy="12" r="1.6" fill="#e6eeff"/><circle cx="8" cy="40" r="1.2" fill="#4d8dff"/><circle cx="42" cy="38" r="1" fill="#ff7a3d"/><circle cx="14" cy="8" r="1" fill="#9cc0ff"/></g>
-          </svg><div><b>Éclaireur·se</b><p>Vos idées, vos rencontres et vos intuitions ouvrent la voie et portent le réseau plus loin.</p><a href="mailto:julien@reskif.org?subject=Je%20rejoins%20Reskif%20comme%20%C3%A9claireur%C2%B7se">Rejoindre le réseau</a></div></div>
+          </svg><div><span class="lvl">lvl 1</span><b>Curieux·se</b><p>Vous découvrez les projets du studio, vous suivez leur avancée et vous en parlez autour de vous.</p><a href="mailto:julien@reskif.org?subject=Je%20rejoins%20Reskif%20comme%20curieux%C2%B7se">Rejoindre le réseau</a></div></div>
           <div class="verre w"><svg class="picto picto-eau" viewBox="0 0 48 48" aria-hidden="true">
             <defs>
               <filter id="goo" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"/></filter>
@@ -182,7 +177,13 @@
               <circle class="d0" cx="24" cy="31" r="11"/><circle class="d1" cx="24" cy="9" r="4.5"/><circle class="d2" cx="33" cy="31" r="5"/><circle class="d3" cx="15" cy="33" r="4"/>
             </g>
             <ellipse class="shine" cx="20" cy="26" rx="3" ry="1.8" fill="#ffffff" opacity=".85"/>
-          </svg><div><b>Expert·e</b><p>Quelques heures par mois au maximum, pour partager votre savoir-faire sur la plateforme.</p><a href="mailto:julien@reskif.org?subject=Je%20propose%20mon%20expertise%20%C3%A0%20Reskif">Proposer mon aide</a></div></div>
+          </svg><div><span class="lvl">lvl 2</span><b>Expert·e</b><p>Quelques heures par mois au maximum, pour partager votre savoir-faire sur la plateforme.</p><a href="mailto:julien@reskif.org?subject=Je%20propose%20mon%20expertise%20%C3%A0%20Reskif">Proposer mon aide</a></div></div>
+          <div class="verre w"><svg class="picto picto-feu" viewBox="0 0 48 48" aria-hidden="true">
+            <defs><linearGradient id="g-feu" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff3d6"/><stop offset=".3" stop-color="#ffb347"/><stop offset=".62" stop-color="#ff3e00"/><stop offset="1" stop-color="#5b1cff"/></linearGradient></defs>
+            <path class="f1" d="M24 46c-9 0-15-6-15-14 0-7 5-11 7-17 1 4 3 6 5 7 0-6 3-12 8-17 0 7 4 11 7 15 2 3 3 6 3 10 0 9-6 16-15 16z" fill="url(#g-feu)"/>
+            <path class="f2" d="M24 46c-5 0-8-3-8-8 0-4 3-6 4-10 1 2 2 3 3 3 0-3 2-6 4-8 0 4 2 6 3 8 1 2 2 4 2 6 0 5-3 9-8 9z" fill="#fff3d6"/>
+            <circle class="em" cx="13" cy="24" r="1.3" fill="#ffb347"/><circle class="em em2" cx="35" cy="20" r="1.1" fill="#ff7a3d"/><circle class="em em3" cx="28" cy="10" r=".9" fill="#fff3d6"/>
+          </svg><div><span class="lvl">lvl 3</span><b>Financeur·se</b><p>Vous donnez au pot commun ou vous sponsorisez un projet en attente. Vous suivez ensuite chaque point d'étape.</p><a href="mailto:julien@reskif.org?subject=Je%20finance%20un%20projet%20Reskif">Financer un projet</a></div></div>
           <div class="verre c"><svg class="picto picto-terre" viewBox="0 0 48 48" aria-hidden="true">
             <polygon class="s" style="--dx:-14px;--dy:-10px;--r:-80deg;--i:6" points="16,11 24,4 24,16" fill="#efe9df"/>
             <polygon class="s" style="--dx:14px;--dy:-12px;--r:70deg;--i:7" points="24,4 32,11 24,16" fill="#ff8a5c"/>
@@ -193,7 +194,7 @@
             <polygon class="s" style="--dx:0px;--dy:14px;--r:90deg;--i:1" points="20,26 28,26 29,33 19,33" fill="#c9c2b8"/>
             <polygon class="s" style="--dx:-16px;--dy:14px;--r:-50deg;--i:0" points="7,45 19,33 24,35 24,45" fill="#4d6dff"/>
             <polygon class="s" style="--dx:16px;--dy:14px;--r:50deg;--i:0" points="24,45 24,35 29,33 41,45" fill="#ff8a5c"/>
-          </svg><div><b>Porteur·se de projet</b><p>Une idée, même floue, ou un projet qui cherche des allié·es pour grandir.</p><a href="mailto:julien@reskif.org?subject=Mon%20projet%20pour%20l'Impact%20Studio">Proposer un projet</a></div></div>
+          </svg><div><span class="lvl">lvl 4</span><b>Je porte un projet</b><p>Une idée, même floue, ou un projet qui cherche des allié·es pour grandir.</p><a href="mailto:julien@reskif.org?subject=Mon%20projet%20pour%20l'Impact%20Studio">Proposer un projet</a></div></div>
         </div>
       </div>
     </section>

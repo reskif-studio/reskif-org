@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://reskif.org/">
 <meta name="theme-color" content="#010101">
 <meta property="og:title" content="Reskif, le réseau de kif">
-<meta property="og:description" content="Le virtuel au service du vivant. Un réseau de financeur·ses, éclaireur·ses, expert·es et porteur·ses de projets tournés vers le vivant.">
+<meta property="og:description" content="Le virtuel au service du vivant. Un réseau de curieux·ses, expert·es, financeur·ses et porteur·ses de projets tournés vers le vivant.">
 <meta property="og:url" content="https://reskif.org/">
 <meta property="og:image" content="https://reskif.org/apercu.jpg">
 <meta property="og:site_name" content="Reskif">
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Le virtuel au service du vivant. Reskif est un réseau de kif rassemblant financeur·ses, éclaireur·ses, expert·es et porteur·ses de projets.">
+<meta name="description" content="Le virtuel au service du vivant. Reskif est un réseau de kif rassemblant curieux·ses, expert·es, financeur·ses et porteur·ses de projets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,500&display=swap">
@@ -134,6 +134,7 @@
   }
   .choice b { font: 700 clamp(17px, 2.4vmin, 22px)/1.15 var(--display); }
   .choice-text { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
+  .choice .lvl { font: 500 11px/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
   .choice .d { font: 300 italic 15px/1.35 var(--text); color: var(--muted); }
   .choice:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, .5); }
   .choice.w:hover, .choice.w[aria-pressed="true"] { border-color: var(--warm); background: rgba(255, 106, 43, .14); }
@@ -270,7 +271,8 @@
   @media (max-width: 640px) {
     .choices { grid-template-columns: 1fr; gap: 8px; }
     .choice { padding: 12px 16px; border-radius: 14px; }
-    .choice .d { font-size: 13px; }
+    .choice .lvl { font: 500 11px/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .choice .d { font-size: 13px; }
     .choice .picto { width: 40px; height: 40px; }
     .credits { display: none; }
   }
@@ -316,16 +318,7 @@
     <h2>Et vous, qui <span style="white-space:nowrap">êtes-vous&nbsp;?</span></h2>
     <div>
       <div class="choices">
-        <button type="button" class="choice w" id="c-financeur" data-branch="feu" tabindex="-1">
-          <svg class="picto picto-feu" viewBox="0 0 48 48" aria-hidden="true">
-            <defs><linearGradient id="g-feu" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff3d6"/><stop offset=".3" stop-color="#ffb347"/><stop offset=".62" stop-color="#ff3e00"/><stop offset="1" stop-color="#5b1cff"/></linearGradient></defs>
-            <path class="f1" d="M24 46c-9 0-15-6-15-14 0-7 5-11 7-17 1 4 3 6 5 7 0-6 3-12 8-17 0 7 4 11 7 15 2 3 3 6 3 10 0 9-6 16-15 16z" fill="url(#g-feu)"/>
-            <path class="f2" d="M24 46c-5 0-8-3-8-8 0-4 3-6 4-10 1 2 2 3 3 3 0-3 2-6 4-8 0 4 2 6 3 8 1 2 2 4 2 6 0 5-3 9-8 9z" fill="#fff3d6"/>
-            <circle class="em" cx="13" cy="24" r="1.3" fill="#ffb347"/><circle class="em em2" cx="35" cy="20" r="1.1" fill="#ff7a3d"/><circle class="em em3" cx="28" cy="10" r=".9" fill="#fff3d6"/>
-          </svg>
-          <span class="choice-text"><b>Je suis financeur·se</b><span class="d">Je fais pousser des projets qui ont du sens.</span></span>
-        </button>
-        <button type="button" class="choice c" id="c-eclaireur" data-branch="air" tabindex="-1">
+        <button type="button" class="choice c" id="c-curieux" data-branch="air" tabindex="-1">
           <svg class="picto picto-air" viewBox="0 0 48 48" aria-hidden="true">
             <g class="swirl" fill="none" stroke-linecap="round" stroke-width="3">
               <path class="w1" d="M5 19h23a6 6 0 1 0-6-6" stroke="#e6eeff"/>
@@ -334,7 +327,7 @@
             </g>
             <g class="motes"><circle cx="40" cy="12" r="1.6" fill="#e6eeff"/><circle cx="8" cy="40" r="1.2" fill="#4d8dff"/><circle cx="42" cy="38" r="1" fill="#ff7a3d"/><circle cx="14" cy="8" r="1" fill="#9cc0ff"/></g>
           </svg>
-          <span class="choice-text"><b>Je suis éclaireur·se</b><span class="d">J'ouvre la voie et je partage l'élan.</span></span>
+          <span class="choice-text"><span class="lvl">lvl 1</span><b>Curieux·se</b><span class="d">Je découvre les projets et je les fais connaître.</span></span>
         </button>
         <button type="button" class="choice w" id="c-expert" data-branch="eau" tabindex="-1">
           <svg class="picto picto-eau" viewBox="0 0 48 48" aria-hidden="true">
@@ -347,7 +340,16 @@
             </g>
             <ellipse class="shine" cx="20" cy="26" rx="3" ry="1.8" fill="#ffffff" opacity=".85"/>
           </svg>
-          <span class="choice-text"><b>Je suis expert·e</b><span class="d">J'apporte mon savoir-faire là où il compte.</span></span>
+          <span class="choice-text"><span class="lvl">lvl 2</span><b>Expert·e</b><span class="d">Je donne un peu de temps et de savoir-faire.</span></span>
+        </button>
+        <button type="button" class="choice w" id="c-financeur" data-branch="feu" tabindex="-1">
+          <svg class="picto picto-feu" viewBox="0 0 48 48" aria-hidden="true">
+            <defs><linearGradient id="g-feu" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff3d6"/><stop offset=".3" stop-color="#ffb347"/><stop offset=".62" stop-color="#ff3e00"/><stop offset="1" stop-color="#5b1cff"/></linearGradient></defs>
+            <path class="f1" d="M24 46c-9 0-15-6-15-14 0-7 5-11 7-17 1 4 3 6 5 7 0-6 3-12 8-17 0 7 4 11 7 15 2 3 3 6 3 10 0 9-6 16-15 16z" fill="url(#g-feu)"/>
+            <path class="f2" d="M24 46c-5 0-8-3-8-8 0-4 3-6 4-10 1 2 2 3 3 3 0-3 2-6 4-8 0 4 2 6 3 8 1 2 2 4 2 6 0 5-3 9-8 9z" fill="#fff3d6"/>
+            <circle class="em" cx="13" cy="24" r="1.3" fill="#ffb347"/><circle class="em em2" cx="35" cy="20" r="1.1" fill="#ff7a3d"/><circle class="em em3" cx="28" cy="10" r=".9" fill="#fff3d6"/>
+          </svg>
+          <span class="choice-text"><span class="lvl">lvl 3</span><b>Financeur·se</b><span class="d">Je finance des projets qui ont du sens.</span></span>
         </button>
         <button type="button" class="choice c" id="c-porteur" data-branch="terre" tabindex="-1">
           <svg class="picto picto-terre" viewBox="0 0 48 48" aria-hidden="true">
@@ -361,7 +363,7 @@
             <polygon class="s" style="--dx:-16px;--dy:14px;--r:-50deg;--i:0" points="7,45 19,33 24,35 24,45" fill="#4d6dff"/>
             <polygon class="s" style="--dx:16px;--dy:14px;--r:50deg;--i:0" points="24,45 24,35 29,33 41,45" fill="#ff8a5c"/>
           </svg>
-          <span class="choice-text"><b>Je porte un projet</b><span class="d">Je cherche des allié·es pour le faire grandir.</span></span>
+          <span class="choice-text"><span class="lvl">lvl 4</span><b>Je porte un projet</b><span class="d">Je cherche des allié·es pour le faire grandir.</span></span>
         </button>
       </div>
     </div>
@@ -372,37 +374,33 @@
 
 <section class="panel branch top" id="b-feu" aria-label="Financeur·se" aria-hidden="true">
   <div class="branch-text">
-    <span class="kicker">Financeur·se · Le feu</span>
-    <h2>Allumer ce qui compte</h2>
-    <p>Votre soutien est une flamme qui se transmet. Il donne aux projets l'énergie de démarrer, et à vous la joie de voir grandir ce qui prend soin des liens à soi, aux autres et à la nature.</p>
+    <h2>Faire naître des projets</h2>
+    <p>Avec 1 000 €, un projet passe un mois à l'Impact Studio. Vous donnez au pot commun ou vous choisissez un projet en attente, puis vous suivez chaque point d'étape.</p>
     <div class="acts"><a class="go" href="mailto:julien@reskif.org?subject=Je%20finance%20un%20projet%20Reskif" tabindex="-1">Financer un projet</a><button type="button" class="back" tabindex="-1">← Revenir aux profils</button></div>
   </div>
 </section>
 
-<section class="panel branch" id="b-air" aria-label="Éclaireur·se" aria-hidden="true">
+<section class="panel branch" id="b-air" aria-label="Curieux·se" aria-hidden="true">
   <div class="branch-text">
-    <span class="kicker">Éclaireur·se · L'air</span>
-    <h2>Faire circuler l'élan</h2>
-    <p>Vous sentez avant les autres d'où vient le vent. Vos idées, vos rencontres et vos intuitions ouvrent la voie et portent le réseau plus loin. Bougez la souris : le souffle vous suit.</p>
-    <div class="acts"><a class="go" href="mailto:julien@reskif.org?subject=Je%20rejoins%20Reskif%20comme%20%C3%A9claireur%C2%B7se" tabindex="-1">Rejoindre le réseau</a><button type="button" class="back" tabindex="-1">← Revenir aux profils</button></div>
+    <h2>Suivre les projets</h2>
+    <p>Vous découvrez les projets du studio, vous suivez leur avancée et vous en parlez autour de vous. C'est la première façon de rejoindre le réseau.</p>
+    <div class="acts"><a class="go" href="mailto:julien@reskif.org?subject=Je%20rejoins%20Reskif%20comme%20curieux%C2%B7se" tabindex="-1">Rejoindre le réseau</a><button type="button" class="back" tabindex="-1">← Revenir aux profils</button></div>
     <small>Particules : <a href="https://github.com/edankwan/The-Spirit" target="_blank" rel="noopener">The Spirit</a> d'Edan Kwan (MIT)</small>
   </div>
 </section>
 
 <section class="panel branch" id="b-eau" aria-label="Expert·e" aria-hidden="true">
   <div class="branch-text">
-    <span class="kicker">Expert·e · L'eau</span>
-    <h2>Irriguer les projets</h2>
-    <p>Votre savoir-faire coule là où on en a besoin. Il épouse la forme de chaque projet et le nourrit en profondeur, sans le figer.</p>
+    <h2>Partager son savoir-faire</h2>
+    <p>Quelques heures par mois au maximum : vous aidez les porteur·ses de projets sur la plateforme, là où votre savoir-faire compte.</p>
     <div class="acts"><a class="go" href="mailto:julien@reskif.org?subject=Je%20propose%20mon%20expertise%20%C3%A0%20Reskif" tabindex="-1">Proposer mon aide</a><button type="button" class="back" tabindex="-1">← Revenir aux profils</button></div>
   </div>
 </section>
 
 <section class="panel branch" id="b-terre" aria-label="Porteur·se de projet" aria-hidden="true">
   <div class="branch-text">
-    <span class="kicker">Porteur·se de projet · La terre</span>
-    <h2>Rassembler les morceaux</h2>
-    <p>Une idée, des rencontres, des moyens, des savoirs : pièce par pièce, le réseau vous aide à rassembler ce qu'il faut pour donner corps à votre projet.</p>
+    <h2>Lancer son projet</h2>
+    <p>Une idée, même floue, ou un projet qui manque de bras : l'Impact Studio vous accompagne pendant un mois, avec Ion et les expert·es du réseau.</p>
     <div class="acts"><a class="go" href="/studio/" tabindex="-1">Découvrir l'Impact Studio</a><button type="button" class="back" tabindex="-1">← Revenir aux profils</button></div>
     <small>Buste : scan Lee Perry-Smith d'<a href="https://ir-ltd.net/" target="_blank" rel="noopener">Infinite-Realities</a> (<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>)</small>
   </div>
@@ -415,7 +413,7 @@
 </nav>
 
 <button type="button" class="next" id="next">
-  <span id="next-label">Survolez le cœur · Défilez pour entrer</span>
+  <span id="next-label">Défilez pour entrer</span>
   <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
 </button>
 
@@ -2097,7 +2095,7 @@ void main() {
   const panels = [0, 1, 2].map(i => viewEls[i]);
   const navButtons = [...document.querySelectorAll('.nav button')];
   const nextLabel = document.getElementById('next-label');
-  const LABELS = ['Survolez le cœur · Défilez pour entrer', 'Défilez pour continuer', ''];
+  const LABELS = ['Défilez pour entrer', 'Défilez pour continuer', ''];
   let shown = null;
 
   function setView(name) {
