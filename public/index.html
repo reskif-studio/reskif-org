@@ -59,7 +59,8 @@
     inset: 0;
     display: grid;
     place-items: center;
-    padding-block: calc(24px + env(safe-area-inset-top, 0px)) calc(56px + env(safe-area-inset-bottom, 0px));
+    /* marges : lien Studio en haut (~44 px), message de défilement et crédits en bas (~64 px) */
+    padding-block: calc(68px + env(safe-area-inset-top, 0px)) calc(92px + env(safe-area-inset-bottom, 0px));
     padding-left: max(20px, env(safe-area-inset-left, 0px));
     padding-right: max(56px, env(safe-area-inset-right, 0px));
     pointer-events: none;
@@ -275,6 +276,9 @@
   .choice .d { font-size: 13px; }
     .choice .picto { width: 40px; height: 40px; }
     .credits { display: none; }
+    /* le titre ne passe plus sous les points de navigation */
+    #p0 { padding-inline: 52px; }
+    #p0 h1 { font-size: clamp(22px, 6.6vw, 40px); }
   }
   @media (prefers-reduced-motion: reduce) { .next svg { animation: none; } }
   .fallback { position: fixed; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--muted); }
